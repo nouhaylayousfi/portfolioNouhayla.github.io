@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio Data Engineer & Data Scientist ">
+<meta name="keywords" content="Data Engineer, Data Scientist, AI, Machine Learning, Apache Kafka, Apache Spark, Python, Big Data">
+<meta name="author" content="Nouhayla YOUSFI">
+<title>Portfolio | Nouhayla YOUSFI | Data Engineer </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+
+<style>
+:root {
+  --bg-primary: #0A0A0F;
+  --bg-secondary: #0F0F1A;
+  --bg-card: rgba(26, 26, 46, 0.7);
+  --accent-violet: #6C63FF;
+  --accent-teal: #00D4AA;
+  --accent-pink: #FF6B9D;
+  --text-primary: #F8F8FF;
+  --text-secondary: #9B9BB4;
+  --text-muted: #5C5C78;
+  --border: rgba(108, 99, 255, 0.15);
+  --glass: rgba(255, 255, 255, 0.03);
+  --gradient-main: linear-gradient(135deg, #6C63FF 0%, #00D4AA 100%);
+  --gradient-card: linear-gradient(135deg, rgba(108,99,255,0.1) 0%, rgba(0,212,170,0.05) 100%);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+[data-theme="light"] {
+  --bg-primary: #F0F0FF;
+  --bg-secondary: #FFFFFF;
+  --bg-card: rgba(255,255,255,0.85);
+  --text-primary: #0A0A1A;
+  --text-secondary: #4A4A6A;
+  --text-muted: #8888AA;
+  --border: rgba(108,99,255,0.2);
+  --glass: rgba(108,99,255,0.05);
+}
+.skill-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.skill-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;transition:background 0.3s,color 0.3s}
+
+/* SCROLL PROGRESS */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--gradient-main);z-index:9999;transition:width 0.1s linear;width:0%}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 0;transition:all 0.4s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+nav.scrolled{background:rgba(10,10,15,0.92);border-bottom:1px solid var(--border);padding:0.8rem 0}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.5rem;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;cursor:pointer}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gradient-main);transition:width 0.3s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;gap:1rem;align-items:center}
+.theme-toggle{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:0.5rem;border-radius:8px;cursor:pointer;font-size:1rem;transition:all 0.3s}
+.theme-toggle:hover{border-color:var(--accent-violet);color:var(--accent-violet)}
+.nav-cta{background:var(--gradient-main);color:white;border:none;padding:0.6rem 1.4rem;border-radius:8px;font-weight:600;cursor:pointer;font-family:var(--font-body);font-size:0.9rem;transition:opacity 0.3s,transform 0.2s}
+.nav-cta:hover{opacity:0.9;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);transition:all 0.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 2rem}
+#particles-canvas{position:absolute;inset:0;z-index:0}
+.hero-bg-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-container{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;font-family:var(--font-mono);color:var(--accent-violet);margin-bottom:1.5rem;animation:fadeInUp 0.8s ease both}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--accent-teal);border-radius:50%;animation:pulse 2s infinite}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:1rem;animation:fadeInUp 0.8s 0.2s ease both}
+.hero-title .line1{display:block;color:var(--text-primary)}
+.hero-title .gradient-text{background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-size:1.05rem;color:var(--text-secondary);margin-bottom:0.8rem;animation:fadeInUp 0.8s 0.3s ease both;max-width:500px}
+.hero-tagline{font-family:var(--font-mono);font-size:0.85rem;color:var(--accent-teal);margin-bottom:2rem;animation:fadeInUp 0.8s 0.4s ease both}
+.hero-tagline::before{content:'> ';color:var(--accent-violet)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeInUp 0.8s 0.5s ease both}
+.btn-primary{background:var(--gradient-main);color:white;border:none;padding:0.9rem 2rem;border-radius:10px;font-weight:600;cursor:pointer;font-family:var(--font-body);font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:transform 0.2s,box-shadow 0.3s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,99,255,0.4)}
+.btn-secondary{background:transparent;color:var(--text-primary);border:1px solid var(--border);padding:0.9rem 2rem;border-radius:10px;font-weight:500;cursor:pointer;font-family:var(--font-body);font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.3s}
+.btn-secondary:hover{border-color:var(--accent-violet);color:var(--accent-violet);background:rgba(108,99,255,0.05)}
+.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;animation:fadeInUp 0.8s 0.6s ease both}
+.stat{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:1.8rem;font-weight:700;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:0.75rem;color:var(--text-muted);margin-top:0.2rem}
+.hero-visual{position:relative;animation:fadeInRight 1s 0.3s ease both}
+.pipeline-container{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2rem;backdrop-filter:blur(10px);position:relative;overflow:hidden}
+.pipeline-container::before{content:'';position:absolute;inset:0;background:var(--gradient-card);pointer-events:none}
+.pipeline-title{font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem}
+.pipeline-title::before{content:'▶';color:var(--accent-violet)}
+.pipeline-flow{display:flex;flex-direction:column;gap:0.8rem}
+.pipeline-step{display:flex;align-items:center;gap:0.8rem;padding:0.7rem 1rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;transition:all 0.3s}
+.pipeline-step:hover{border-color:rgba(108,99,255,0.4);background:rgba(108,99,255,0.05);transform:translateX(4px)}
+.step-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.step-info{flex:1}
+.step-name{font-size:0.85rem;font-weight:600;color:var(--text-primary)}
+.step-tech{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted)}
+.step-arrow{color:var(--accent-teal);font-size:0.8rem;animation:arrowFlow 2s infinite}
+.step-status{width:8px;height:8px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s infinite}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--text-muted);font-size:0.75rem;animation:bounce 2s infinite}
+.scroll-arrow{width:24px;height:24px;border-right:2px solid var(--text-muted);border-bottom:2px solid var(--text-muted);transform:rotate(45deg)}
+
+/* SECTIONS */
+section{padding:6rem 2rem}
+.section-container{max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-violet);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem}
+.section-label::before{content:'';display:block;width:24px;height:2px;background:var(--accent-violet)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1rem;line-height:1.1}
+.section-desc{color:var(--text-secondary);font-size:1rem;max-width:540px;margin-bottom:3rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{color:var(--text-secondary);margin-bottom:1rem;line-height:1.8}
+.about-interests{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.interest-tag{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.25);color:var(--accent-violet);padding:0.35rem 0.9rem;border-radius:50px;font-size:0.8rem;font-family:var(--font-mono);transition:all 0.3s}
+.interest-tag:hover{background:rgba(108,99,255,0.2);transform:translateY(-2px)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent-violet),var(--accent-teal))}
+.timeline-item{position:relative;margin-bottom:2rem;opacity:0;transform:translateX(-20px);transition:all 0.6s}
+.timeline-item.visible{opacity:1;transform:translateX(0)}
+.timeline-dot{position:absolute;left:-2.4rem;top:0.3rem;width:12px;height:12px;border-radius:50%;background:var(--accent-violet);border:2px solid var(--bg-primary);box-shadow:0 0 0 4px rgba(108,99,255,0.2)}
+.timeline-date{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent-teal);margin-bottom:0.3rem}
+.timeline-title{font-family:var(--font-display);font-size:1.05rem;font-weight:600;margin-bottom:0.3rem}
+.timeline-desc{font-size:0.9rem;color:var(--text-secondary)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.skill-category{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;backdrop-filter:blur(10px);transition:all 0.3s;opacity:0;transform:translateY(20px)}
+.skill-category.visible{opacity:1;transform:translateY(0)}
+.skill-category:hover{border-color:rgba(108,99,255,0.4);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.skill-cat-header{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem}
+.skill-cat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.skill-cat-name{font-family:var(--font-display);font-weight:600;font-size:1rem}
+.skill-list{display:flex;flex-direction:column;gap:0.7rem}
+.skill-item{display:flex;align-items:center;gap:0.8rem}
+.skill-icon{font-size:1.3rem;width:28px;text-align:center;display: flex;align-items: center;justify-content: center;}
+.skill-name{font-size:0.85rem;color:var(--text-secondary);flex:1}
+.skill-bar-track{flex:2;height:4px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:2px;background:var(--gradient-main);width:0%;transition:width 1.2s ease}
+.skill-level{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);width:30px;text-align:right}
+
+/* PROJECTS */
+.projects-filter{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--text-secondary);padding:0.45rem 1.1rem;border-radius:50px;font-size:0.82rem;cursor:pointer;font-family:var(--font-body);transition:all 0.3s}
+.filter-btn.active,.filter-btn:hover{background:rgba(108,99,255,0.15);border-color:var(--accent-violet);color:var(--text-primary)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
+.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.4s;cursor:pointer;opacity:0;transform:translateY(20px)}
+.project-card.visible{opacity:1;transform:translateY(0)}
+.project-card:hover{transform:translateY(-6px);border-color:rgba(108,99,255,0.4);box-shadow:0 24px 48px rgba(0,0,0,0.4)}
+.project-img{height:180px;background:var(--gradient-card);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.project-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(10,10,15,0.9))}
+.project-category{position:absolute;top:1rem;right:1rem;background:rgba(108,99,255,0.9);border:1px solid rgba(108,99,255,0.4);color:#ffffff;font-family:var(--font-mono);font-size:0.7rem;padding:0.2rem 0.7rem;border-radius:50px;z-index:1}.project-content{padding:1.5rem}
+.project-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem}
+.project-date{font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)}
+.project-title{font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:0.6rem}
+.project-desc{font-size:0.88rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.6}
+.project-tech{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem}
+.tech-tag{background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.2);color:var(--accent-teal);font-family:var(--font-mono);font-size:0.7rem;padding:0.2rem 0.6rem;border-radius:5px}
+.project-actions{display:flex;gap:0.7rem}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text-secondary);padding:0.45rem 1rem;border-radius:8px;font-size:0.8rem;cursor:pointer;font-family:var(--font-body);transition:all 0.3s;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem}
+.btn-ghost:hover{border-color:var(--accent-violet);color:var(--accent-violet)}
+.btn-ghost.primary-ghost{border-color:rgba(108,99,255,0.4);color:var(--accent-violet);background:rgba(108,99,255,0.07)}
+.btn-ghost.primary-ghost:hover{background:rgba(108,99,255,0.15)}
+
+/* FEATURED PROJECT */
+.featured-project{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:3rem;backdrop-filter:blur(10px);position:relative;overflow:hidden;margin-top:2rem}
+.featured-project::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,0.08) 0%,transparent 70%);pointer-events:none}
+.featured-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,107,157,0.1);border:1px solid rgba(255,107,157,0.3);color:var(--accent-pink);font-family:var(--font-mono);font-size:0.75rem;padding:0.3rem 0.9rem;border-radius:50px;margin-bottom:1.5rem}
+.featured-title{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:1rem}
+.featured-desc{color:var(--text-secondary);font-size:1rem;margin-bottom:2rem;max-width:600px;line-height:1.7}
+.arch-diagram{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:2rem;overflow-x:auto}
+.arch-title{font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);margin-bottom:1.5rem}
+.arch-flow{display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;justify-content:center;min-width:500px}
+.arch-node{background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:0.8rem 1.2rem;text-align:center;transition:all 0.3s;min-width:90px}
+.arch-node:hover{border-color:var(--accent-violet);transform:scale(1.05);background:rgba(108,99,255,0.08)}
+.arch-node-icon{font-size:1.4rem;display:block;margin-bottom:0.3rem}
+.arch-node-name{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-secondary)}
+.arch-arrow{color:var(--accent-teal);font-size:1.2rem;flex-shrink:0}
+.featured-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:2rem}
+.result-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center}
+.result-val{font-family:var(--font-display);font-size:1.6rem;font-weight:700;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.result-label{font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem}
+
+/* EXPERIENCE */
+.exp-timeline{position:relative;padding-left:0}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;margin-bottom:2.5rem;opacity:0;transform:translateY(20px);transition:all 0.6s;position:relative}
+.exp-item.visible{opacity:1;transform:translateY(0)}
+.exp-item::after{content:'';position:absolute;left:200px;top:0;bottom:-2.5rem;width:1px;background:var(--border)}
+.exp-item:last-child::after{display:none}
+.exp-date-col{text-align:right;padding-right:2rem;padding-top:0.3rem;position:relative}
+.exp-date-col::after{content:'';position:absolute;right:-6px;top:10px;width:11px;height:11px;border-radius:50%;background:var(--accent-violet);border:2px solid var(--bg-primary)}
+.exp-period{font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal)}
+.exp-org{font-size:0.82rem;color:var(--text-muted);margin-top:0.3rem}
+.exp-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;backdrop-filter:blur(10px);transition:all 0.3s}
+.exp-card:hover{border-color:rgba(108,99,255,0.35);transform:translateX(4px)}
+.exp-role{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:0.5rem}
+.exp-missions{list-style:none;margin-top:0.8rem}
+.exp-missions li{font-size:0.88rem;color:var(--text-secondary);padding:0.3rem 0;padding-left:1rem;position:relative;line-height:1.6}
+.exp-missions li::before{content:'▸';position:absolute;left:0;color:var(--accent-teal)}
+
+/* CERTS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.cert-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:all 0.3s;cursor:pointer;opacity:0;transform:scale(0.95)}
+.cert-card.visible{opacity:1;transform:scale(1)}
+.cert-card:hover{border-color:rgba(108,99,255,0.4);transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.3)}
+.cert-badge{font-size:2.5rem;margin-bottom:0.8rem;display:block}
+.cert-name{font-family:var(--font-display);font-size:0.95rem;font-weight:600;margin-bottom:0.4rem}
+.cert-org{font-size:0.82rem;color:var(--text-muted)}
+.cert-date{font-family:var(--font-mono);font-size:0.75rem;color:var(--accent-teal);margin-top:0.5rem}
+
+/* GITHUB */
+.github-section{background:var(--bg-secondary);border-radius:24px;padding:2.5rem;border:1px solid var(--border)}
+.github-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:2rem}
+.github-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center}
+.github-stat-num{font-family:var(--font-display);font-size:1.8rem;font-weight:700;background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.github-stat-label{font-size:0.8rem;color:var(--text-muted);margin-top:0.3rem}
+.lang-bars{margin-top:1.5rem}
+.lang-bar-item{margin-bottom:0.8rem}
+.lang-bar-header{display:flex;justify-content:space-between;margin-bottom:0.3rem}
+.lang-name{font-size:0.85rem;font-family:var(--font-mono)}
+.lang-pct{font-size:0.8rem;color:var(--text-muted)}
+.lang-track{height:6px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden}
+.lang-fill{height:100%;border-radius:3px;transition:width 1.5s ease}
+.contrib-grid{display:grid;grid-template-columns:repeat(52,1fr);gap:2px;margin-top:1.5rem}
+.contrib-cell{aspect-ratio:1;border-radius:2px;background:rgba(255,255,255,0.04);transition:all 0.2s}
+.contrib-cell:hover{transform:scale(1.5);z-index:1;position:relative}
+
+/* TESTIMONIALS */
+.testimonials-slider{position:relative;overflow:hidden}
+.testimonials-track{display:flex;transition:transform 0.5s ease;gap:1.5rem}
+.testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;min-width:calc(50% - 0.75rem);flex-shrink:0;backdrop-filter:blur(10px)}
+@media(max-width:768px){.testimonial-card{min-width:100%}}
+.testimonial-quote{font-size:2rem;color:var(--accent-violet);line-height:1;margin-bottom:1rem}
+.testimonial-text{font-size:0.95rem;color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:1rem}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:var(--gradient-main);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:white;flex-shrink:0}
+.author-name{font-family:var(--font-display);font-weight:600;font-size:0.95rem}
+.author-role{font-size:0.8rem;color:var(--text-muted)}
+.slider-controls{display:flex;justify-content:center;gap:0.8rem;margin-top:1.5rem}
+.slider-dot{width:8px;height:8px;border-radius:50%;background:var(--text-muted);cursor:pointer;transition:all 0.3s;border:none}
+.slider-dot.active{background:var(--accent-violet);width:24px;border-radius:4px}
+.slider-arrows{display:flex;gap:0.8rem;justify-content:center;margin-top:1rem}
+.slider-arrow{background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.slider-arrow:hover{border-color:var(--accent-violet);color:var(--accent-violet)}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s;cursor:pointer}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(108,99,255,0.35);box-shadow:0 16px 32px rgba(0,0,0,0.3)}
+.blog-card-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
+.blog-card-content{padding:1.4rem}
+.blog-tag{display:inline-block;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.25);color:var(--accent-violet);font-family:var(--font-mono);font-size:0.7rem;padding:0.2rem 0.7rem;border-radius:50px;margin-bottom:0.8rem}
+.blog-card-title{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:0.5rem;line-height:1.4}
+.blog-card-meta{display:flex;align-items:center;gap:1rem;font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.2rem}
+.contact-link{display:flex;align-items:center;gap:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;text-decoration:none;color:var(--text-primary);transition:all 0.3s}
+.contact-link:hover{border-color:rgba(108,99,255,0.4);background:rgba(108,99,255,0.05);transform:translateX(4px)}
+.contact-link-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-link-info{}
+.contact-link-label{font-size:0.78rem;color:var(--text-muted);margin-bottom:0.2rem}
+.contact-link-value{font-size:0.92rem;font-weight:500}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-label{font-size:0.82rem;color:var(--text-secondary);font-weight:500}
+.form-input,.form-textarea,.form-select{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:0.85rem 1rem;color:var(--text-primary);font-family:var(--font-body);font-size:0.9rem;transition:all 0.3s;width:100%;outline:none}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--accent-violet);background:rgba(108,99,255,0.04);box-shadow:0 0 0 3px rgba(108,99,255,0.1)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-select option{background:var(--bg-secondary);color:var(--text-primary)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-success{display:none;background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.3);color:var(--accent-teal);padding:1rem;border-radius:10px;font-size:0.88rem;text-align:center}
+
+/* FOOTER */
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:3rem 2rem 2rem}
+.footer-container{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-brand .nav-logo{display:inline-block;margin-bottom:1rem}
+.footer-desc{font-size:0.88rem;color:var(--text-secondary);line-height:1.7;max-width:280px}
+.footer-social{display:flex;gap:0.8rem;margin-top:1.2rem}
+.social-link{width:38px;height:38px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1rem;color:var(--text-muted);transition:all 0.3s}
+.social-link:hover{border-color:var(--accent-violet);color:var(--accent-violet);background:rgba(108,99,255,0.08)}
+.footer-col h4{font-family:var(--font-display);font-size:0.9rem;font-weight:600;margin-bottom:1rem;color:var(--text-primary)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.footer-links a:hover{color:var(--accent-violet)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:0.82rem;color:var(--text-muted)}
+.footer-made{display:flex;align-items:center;gap:0.4rem}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInRight{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.2)}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+@keyframes arrowFlow{0%,100%{opacity:1}50%{opacity:0.3}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-container,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .exp-item{grid-template-columns:1fr}
+  .exp-item::after{display:none}
+  .exp-date-col{text-align:left;padding-right:0}
+  .exp-date-col::after{display:none}
+  .footer-top{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;top:70px;background:var(--bg-primary);padding:2rem;gap:1.5rem;z-index:999}
+  .hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+  section{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-container">
+    <div class="nav-logo"><span style="color:var(--accent-teal);">#</span>NY</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">À Propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#activites">Activités</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Basculer thème">🌙</button>
+      <a href="#contact" class="nav-cta">Embauchez-moi</a>
+      <div class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-bg-glow"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span></span>
+          Disponible pour un premier emploi dès octobre 2026.
+      </div>
+      <h1 class="hero-title">
+        <span class="line1">Nouhayla YOUSFI</span>
+        <span class="gradient-text">Data Engineer</span>
+      </h1>
+      <p class="hero-subtitle">Je transforme les données brutes en solutions intelligentes grâce à l'ingénierie des données, l'IA et l'analyse avancée.</p>
+      <p class="hero-tagline">Je construis des pipelines de données à grande échelle.</p>
+      <div class="hero-actions">
+        <a href="files/CV_YOUSFI_Nouhayla.pdf" download class="btn-primary">📄 Télécharger CV</a>
+        <a href="#projects" class="btn-secondary">🚀 Voir mes projets</a>
+        <a href="#contact" class="btn-secondary">💬 Contact</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Projets Data Complets</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">7</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-container">
+    <div class="section-label">01 À Propos</div>
+    <h2 class="section-title">Passionné par la donnée</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Jeune diplômée en Septembre 2026 <strong> de l'École Natione des Sciences Appliquées d'Oujda , filière Data Science & Cloud Computing  </strong>. Ma passion se situe à l'intersection de la donnée et de l'intelligence artificielle — concevoir des pipelines intelligents capables non seulement de traiter la donnée à grande échelle, mais d'y embarquer de la logique IA pour en extraire une valeur réelle et actionnable.</p>
+        <p>Mon ambition est de contribuer à des systèmes de données critiques et d'envergure, où l'ingénierie rigoureuse rencontre l'innovation algorithmique — et d'évoluer rapidement vers des rôles à forte responsabilité technique. </p>
+        <div class="about-interests">
+          <span class="interest-tag"> Data Engineering</span>
+          <span class="interest-tag"> Big Data</span>
+          <span class="interest-tag"> Machine Learning</span>
+          <span class="interest-tag"> Deep Learning</span>
+          <span class="interest-tag"> Cloud</span>
+          <span class="interest-tag"> Data Analytics</span>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 – 2026</div>
+          <div class="timeline-title">Cycle d'ingénieur - École Nationale des Sciences Appliquées d'Oujda (ENSAO)</div>
+          <div class="timeline-desc">Filière Data Science & Cloud Computing </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--accent-teal)"></div>
+          <div class="timeline-date">2021 – 2023</div>
+          <div class="timeline-title">Cycle préparatoire  – École Nationale des Sciences Appliquées d'Oujda (ENSAO)</div>
+          <div class="timeline-desc">Mathématiques et Sciences de l'Ingénieur. Formation  en analyse, algèbre linéaire et algorithmique.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--accent-pink)"></div>
+          <div class="timeline-date">2021</div>
+          <div class="timeline-title">Baccalauréat Sciences Physique - Lycée Mohammed 6 - Oujda</div>
+          <div class="timeline-desc">Mention Très Bien. </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--bg-secondary)">
+  <div class="section-container">
+    <div class="section-label">02 Compétences</div>
+    <h2 class="section-title">Stack technique<br></h2>
+    <p class="section-desc">Une maîtrise complète de l'écosystème Data, de l'ingestion jusqu'au déploiement en production.</p>
+    <div class="skills-grid" id="skills-grid">
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(108,99,255,0.15)">⚒️</div>
+          <div class="skill-cat-name">Data Engineering - Big Data </div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-apachekafka-original"></i></span><span class="skill-name">Apache Kafka</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-level">85%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-apachespark-original colored"></i></span><span class="skill-name">Apache Spark</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-level">80%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-hadoop-plain"></i></span><span class="skill-name">Hadoop</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-level">50%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-apacheairflow-plain colored"></i></span><span class="skill-name">Apache Airflow</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-level">70%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-azuresqldatabase-plain"></i></span><span class="skill-name">SQL</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div><span class="skill-level">90%</span></div>
+
+          <div class="skill-item"><span class="skill-icon"><i class="devicons devicons-dbt-icon"></i></span><span class="skill-name">dbt</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div><span class="skill-level">50%</span></div>
+        <div class="skill-tags-row" >
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">ETL/ELT</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Data Warehouse</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Data Lakehouse</span>
+        </div>
+
+        
+      </div>
+
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(0,212,170,0.15)">🗄️</div>
+          <div class="skill-cat-name">Bases de Données</div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><i class="devicon-mysql-original colored"></i><span class="skill-name">MySQL</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-level">85%</span></div>
+          <div class="skill-item"><i class="devicon-microsoftsqlserver-plain colored"></i><span class="skill-name">SQL SERVER</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div><span class="skill-level">75%</span></div>          
+          <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span class="skill-name">PostgreSQL</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-level">80%</span></div>
+          <div class="skill-item"><i class="devicon-mongodb-plain colored"></i><span class="skill-name">MongoDB</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-level">70%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(255,107,157,0.15)">🤖</div>
+          <div class="skill-cat-name">Langages de programmation </div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="22" height="22"/><span class="skill-name">Python</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div><span class="skill-level">95%</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="22" height="22"/><span class="skill-name">JAVA</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div><span class="skill-level">60%</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" width="22" height="22" /><span class="skill-name">C</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div><span class="skill-level">75%</span></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(255,107,157,0.15)">🤖</div>
+          <div class="skill-cat-name">AI & Machine Learning</div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="22" height="22"/><span class="skill-name">Python</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div><span class="skill-level">95%</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" width="22" height="22"/><span class="skill-name">Scikit-Learn</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-level">65%</span></div>
+          <div class="skill-item"><i class="devicon-tensorflow-original colored"></i><span class="skill-name">TensorFlow</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-level">65%</span></div>
+          <div class="skill-item"><i class="devicon-pandas-plain"></i><span class="skill-name">Pandas</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div><span class="skill-level">90%</span></div>
+          <div class="skill-item"><i class="devicon-numpy-plain colored"></i><span class="skill-name">NumPy</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div><span class="skill-level">90%</span></div>
+        </div>
+
+        <div class="skill-tags-row" >
+      
+
+        <div class="skill-tag">
+          <span style="font-size:0.85rem;">🔗</span>
+          <span style="font-size:0.8rem; color:var(--text-secondary);">MCP</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">ANN</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">RNN</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">LSTM</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Supervised ML</span>
+        </div>
+
+        <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">Unsupervised ML</span>
+        </div>
+
+         <div class="skill-tag">
+          <span style="font-size:0.8rem; color:var(--text-secondary);">LLM</span>
+        </div>
+        
+      </div>
+      </div>
+
+      
+
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(255,193,7,0.15)">☁️</div>
+          <div class="skill-cat-name">Cloud & DevOps</div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-amazonwebservices-plain-wordmark"></i></span><span class="skill-name">AWS</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-level">65%</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" width="22" height="22"/><span class="skill-name">Azure</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="45"></div></div><span class="skill-level">45%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-git-plain colored"></i></span><span class="skill-name">Git/GitHub</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-level">85%</span></div>
+          <div class="skill-item"><span class="skill-icon"><i class="devicon-docker-plain colored"></i></span><span class="skill-name">Docker</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-level">85%</span></div>
+          <div class="skill-item"><span class="skill-icon">🐧</span><span class="skill-name">Linux / Bash</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-level">70%</span></div>
+
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(108,99,255,0.15)">📊</div>
+          <div class="skill-cat-name">BI & Visualisation</div>
+        </div>
+        <div class="skill-list">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powerbi.svg" width="22" height="22" style="filter: brightness(0) saturate(100%) invert(83%) sepia(67%) saturate(600%) hue-rotate(3deg) brightness(103%) contrast(97%);"/><span class="skill-name">Power BI</span><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-level">85%</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-container">
+    <div class="section-label">03 Projets</div>
+    <h2 class="section-title">Ce que j'ai<br>construit</h2>
+    <p class="section-desc">Des projets concrets qui démontrent ma capacité à résoudre des problèmes complexes avec des technologies modernes.</p>
+    <div class="projects-filter">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
+      <button class="filter-btn" data-filter="data-science">Data Science</button>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+
+
+      <div class="project-card" data-category="data-engineering">
+      <div class="project-img" style="background:linear-gradient(135deg,rgba(108,99,255,0.25),rgba(0,212,170,0.15)); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s infinite;"></div>
+          <span style="font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);letter-spacing:0.1em;">EN COURS</span>
+          <span class="project-category">Data Engineering</span>
+        </div>
+      </div>  
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-date">En cours (PFE)</span>
+          </div>
+          <h3 class="project-title">Plateforme Lakehouse Cloud Native pour l'analyse du marché IT (Maroc & France)</h3>
+          <p class="project-desc">Plateforme open-source de data engineering conçue selon une architecture medallion (Bronze/Silver/Gold), collectant et analysant des offres d'emploi tech au Maroc et en France depuis plusieurs sources hétérogènes. Le pipeline ingère, déduplique, normalise et enrichit les données pour en extraire les compétences techniques recherchées sur le marché, exposées ensuite via des dashboards et des agents IA. Conçue pour rester compatible Databricks en vue d'une migration future.</p>
+          <div class="project-tech">
+            <span class="tech-tag">PySpark</span>
+            <span class="tech-tag">Apache Airflow</span>
+            <span class="tech-tag">MinIO</span>
+            <span class="tech-tag">dbt</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">LLM</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Data Lakehouse</span>
+            <span class="tech-tag">Medallion Architecture</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nouhaylayousfi/Lakehouse_CloudNative_tech_jobs.git" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+            <a href="#" class="btn-ghost" onclick="document.getElementById('modal-lakehouse').style.display='flex'; return false;">📑 Détails</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="data-engineering">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(0,212,170,0.2),rgba(108,99,255,0.1))">
+          <img src="images/sqldw.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.85;"/>
+          <span class="project-category">Data Engineering</span>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-date">Fév 2026</span>
+          </div>
+          <h3 class="project-title">SQL Data Warehouse & Sales Analytics</h3>
+          <p class="project-desc">Entrepôt de données end-to-end intégrant des sources ERP et CRM pour l'analyse des ventes et clients. Architecture Medallion (Bronze → Silver → Gold) en T-SQL, avec modélisation en étoile, pipelines ETL complets et couche analytique prête pour le reporting business.</p>          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">Data Warehouse</span>
+            <span class="tech-tag">ETL</span>
+            <span class="tech-tag">SSMS</span>
+            <span class="tech-tag">Medallion Architecture</span>
+            <span class="tech-tag">Star Schema</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nouhaylayousfi/sql_data_warehouse_project.git" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+            <a href="#" class="btn-ghost" onclick="document.getElementById('modal-warehouse').style.display='flex'; return false;">📑 Détails</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="project-card" data-category="data-engineering">
+  <div class="project-img" style="background:linear-gradient(135deg,rgba(0,212,170,0.2),rgba(108,99,255,0.1))">
+          <img src="images/e-comm.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.85;"/>
+          <span class="project-category">Data Engineering</span>
+        </div>
+  <div class="project-content">
+    <div class="project-meta">
+      <span class="project-date">Fév 2025</span>
+    </div>
+    <h3 class="project-title">Détection d'Anomalies E-Commerce en Temps Réel</h3>
+    <p class="project-desc">Système de détection d'anomalies sur des transactions e-commerce en streaming. Projet collaboratif — contribution personnelle centrée sur la couche d'ingestion temps réel avec Apache Kafka.</p>
+    <div class="project-tech">
+      <span class="tech-tag">Apache Kafka</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Streaming</span>
+      <span class="tech-tag">Docker</span>
+    </div>
+    <div class="project-actions">
+      <a href="https://github.com/CHAREFkhaoula/detection_anomalies_ecommerce" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+      <a href="#" class="btn-ghost" onclick="document.getElementById('modal-ecommerce').style.display='flex'; return false;">📑 Détails</a>
+    </div>
+  </div>
+</div>
+
+    <div class="project-card" data-category="data-science">
+      <div class="project-img" style="background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(0,212,170,0.1))">
+        <img src="images/iot.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.85;"/>
+        <span class="project-category" >Data Science</span>
+      </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-date">Déc 2025</span>
+          </div>
+          <h3 class="project-title">Détection des défauts dans les surfaces textiles</h3>
+          <p class="project-desc">Système automatisé de détection de défauts sur surfaces textiles, combinant vision par ordinateur, deep learning et IoT. Le modèle PatchCore (ResNet18) analyse en temps réel des images de tissu capturées par caméra, classifie chaque échantillon comme normal ou défectueux, et déclenche simultanément un retour visuel via Arduino (LED verte/rouge) et un tableau de bord cloud ThingsBoard pour la supervision à distance.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PatchCore</span>
+            <span class="tech-tag">ResNet18</span>
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">ThingsBoard</span>
+            <span class="tech-tag">IoT</span>
+            <span class="tech-tag">Computer Vision</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nouhaylayousfi/defect-detection-in-textile-surfaces.git" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+            <a href="#" class="btn-ghost" onclick="document.getElementById('modal-iot').style.display='flex'; return false;">📑 Détails</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="project-card" data-category="data-engineering">
+  <div class="project-img" style="background:linear-gradient(135deg,rgba(0,150,255,0.2),rgba(0,212,170,0.15)); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+    <span style="font-size:3rem;">🌤️</span>
+    <span class="project-category">Data Engineering</span>
+  </div>
+  <div class="project-content">
+    <div class="project-meta">
+      <span class="project-date">Sept 2025</span>
+    </div>
+    <h3 class="project-title">Pipeline Météo Temps Réel</h3>
+    <p class="project-desc">Pipeline de streaming météorologique ingérant des données depuis l'API Open-Meteo via un producer Kafka en mode kraft, normalisant les événements en temps réel avec ksqlDB, et exposant les features météo pour analyse — le tout conteneurisé avec Docker.</p>
+    <div class="project-tech">
+      <span class="tech-tag">Kafka KRaft</span>
+      <span class="tech-tag">ksqlDB</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Open-Meteo API</span>
+      <span class="tech-tag">Docker</span>
+    </div>
+    <div class="project-actions">
+      <a href="https://github.com/nouhaylayousfi/meteo_pipeline" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+      <a href="#" class="btn-ghost" onclick="document.getElementById('modal-meteo').style.display='flex'; return false;">📑 Détails</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="project-card" data-category="data-science">
+        <div class="project-img" style="background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(0,212,170,0.1))">
+        <img src="images/labguard.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.85;"/>
+        <span class="project-category" >Data Science</span>
+      </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-date">Oct 2025</span>
+          </div>
+          <h3 class="project-title">LabGuard — Contrôle qualité et suivi des données d'analyses sanguines</h3>
+          <p class="project-desc">Application web de surveillance et validation de données médicales de laboratoire. Lab Guard permet d'ingérer des fichiers CSV, de créer des cohortes, de définir des règles métier personnalisées, de détecter des drifts statistiques et de générer automatiquement des rapports de contrôle qualité — le tout via une interface moderne et une API REST robuste.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">sqlalchemy</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">LLM</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nouhaylayousfi/Lab_guard-Blood-Work-Quality-and-Monitoring.git" class="btn-ghost primary-ghost" target="_blank">🔗 GitHub</a>
+            <a href="#" class="btn-ghost" onclick="document.getElementById('modal-labguard').style.display='flex'; return false;">📑 Détails</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODALS EN DEHORS DE LA SECTION ===== -->
+
+<!-- MODAL Lakehouse -->
+<div id="modal-lakehouse" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-lakehouse').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Projet de Fin d'Études — ENSA Oujda</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">Lakehouse Cloud Native — Marché de l'emploi Tech</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Problématique</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Le marché de l'emploi tech est dispersé entre de nombreuses plateformes , rendant difficile une vision consolidée des compétences réellement demandées. Ce projet propose un pipeline data engineering complet, open-source et portable vers le cloud (Databricks-ready), pour centraliser, nettoyer et analyser ces offres.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture globale (Medallion)</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Bronze — ingestion brute multi-sources vers MinIO (S3-compatible), écriture directe Python via boto3 </li>
+          <li>Silver — nettoyage, déduplication et extraction des compétences techniques (dictionnaire + LLM)</li>
+          <li>Gold — agrégations métier via dbt pour l'exposition aux dashboards et agents IA</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Sources de données</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>France Travail — API officielle (OAuth2)</li>
+          <li>Adzuna — API officielle</li>
+          <li>Rekrute.com — scraping HTML statique (BeautifulSoup)</li>
+          <li>Indeed (Maroc/France) — via un acteur Apify </li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Stack technique</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li><strong>Orchestration</strong> — Apache Airflow 3.2.2</li>
+          <li><strong>Traitement</strong> — Apache Spark 3.5.1 (cluster standalone Docker), Delta Lake pour le versionnement des données</li>
+          <li><strong>Stockage</strong> — MinIO (substitut local S3-compatible)</li>
+          <li><strong>Transformation</strong> — dbt (Silver → Gold)</li>
+          <li><strong>IA</strong> — Groq API (llama-3.3-70b-versatile) pour le filtrage de pertinence des offres</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> État d'avancement</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Couche Bronze finalisée (4 sources intégrées). Couche Silver en cours de développement (déduplication et extraction des compétences). Prochaines étapes : transformations Gold via dbt, module d'agents IA, dashboards et déploiement Kubernetes possible.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL SQL DW -->
+<div id="modal-warehouse" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-warehouse').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Projet Data Engineering</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">SQL Data Warehouse & Sales Analytics</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Besoin métier</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Consolider des données dispersées entre un système ERP (ventes, produits) et un CRM (clients, interactions) en un entrepôt unifié pour permettre l'analyse des performances commerciales et la prise de décision data-driven.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture Medallion</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li><strong>Bronze</strong> — Ingestion brute des fichiers CSV sources ERP et CRM sans transformation</li>
+          <li><strong>Silver</strong> — Nettoyage, déduplication, standardisation et intégration des deux sources</li>
+          <li><strong>Gold</strong> — Modélisation en étoile (Star Schema) avec tables de faits et dimensions prêtes pour l'analytique</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Analyses produites</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Analyse des ventes par produit, région et période</li>
+          <li>Segmentation et comportement clients (données CRM)</li>
+          <li>Rapports de performance commerciale via vues SQL Gold</li>
+          <li>Contrôle qualité des données à chaque couche</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Ce qui a été réalisé</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Conception du schéma en étoile (tables de faits + dimensions)</li>
+          <li>Pipelines ETL complets en T-SQL pour les 3 couches</li>
+          <li>Intégration et réconciliation des données ERP et CRM</li>
+          <li>Scripts de tests et validation qualité des données</li>
+          <li>Documentation : diagrammes d'architecture, catalog de données</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL E-Commerce -->
+<div id="modal-ecommerce" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-ecommerce').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Détails</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">Détection d'Anomalies E-Commerce en Temps Réel</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Contexte</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Projet collaboratif visant à construire un pipeline de détection d'anomalies sur des flux de transactions e-commerce en temps réel. Le système couvre l'ingestion, le traitement et la détection intelligente des comportements suspects.</p>
+      </div>
+      <div class="exp-card" style="border-color:rgba(108,99,255,0.4);background:rgba(108,99,255,0.05);">
+        <div class="exp-role" style="color:var(--accent-violet);">⚡ Ma contribution — Couche Ingestion (Kafka)</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Mise en place et configuration du cluster Apache Kafka avec Docker</li>
+          <li>Développement du producer Kafka simulant des flux de transactions e-commerce en temps réel</li>
+          <li>Création et configuration des topics Kafka (transactions, anomalies) avec partitionnement adapté</li>
+          <li>Implémentation des consumers pour la transmission des données vers la couche de traitement</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture globale du projet</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li><strong>Ingestion</strong> — Kafka (ma partie) : streaming des transactions en temps réel</li>
+          <li><strong>Traitement</strong> — Spark Streaming : consommation et transformation des événements</li>
+          <li><strong>Détection</strong> — Modèle ML : scoring et classification des anomalies</li>
+          <li><strong>Visualisation</strong> — Dashboard : restitution des alertes et métriques</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IoT -->
+<div id="modal-iot" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-iot').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Détails</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">Détection de Défauts Textiles</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Problématique</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">L'inspection manuelle des tissus en industrie textile est lente, subjective et sujette à la fatigue humaine. Ce projet propose une alternative automatisée, fiable et déployable sur matériel standard.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture globale</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Vision — capture d'image par caméra, traitement par le modèle IA</li>
+          <li>Hardware — Arduino Uno pilotant une LED verte (OK) ou rouge (KO) via communication série</li>
+          <li>Cloud — dashboard ThingsBoard affichant le score d'anomalie en temps réel</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Dataset — TILDA</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>770 images normales — entraînement (75%)</li>
+          <li>132 images défectueuses — validation (13%)</li>
+          <li>130 images mixtes — test (12%)</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Modèles évalués</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li><strong>EfficientAD (baseline)</strong> — Knowledge distillation teacher-student, très rapide, utilisé comme référence.</li>
+          <li><strong>PatchCore (modèle final)</strong> — ResNet18 (couches 2+3), memory bank de patches normaux.</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Résultats</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">PatchCore multicouches offre le meilleur compromis détection/faux positifs, avec localisation précise des défauts par heatmap.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL Météo -->
+<div id="modal-meteo" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-meteo').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Détails</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">🌤️ Pipeline Météo Temps Réel</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Objectif</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Construire un pipeline de streaming météorologique end-to-end, capable d'ingérer des données météo en temps réel depuis l'API Open-Meteo, de les traiter et normaliser via ksqlDB.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture du pipeline</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li><strong>api_connectors</strong> — Connecteurs Python vers l'API Open-Meteo </li>
+          <li><strong>producers</strong> — Producer Kafka publiant les données météo dans un topic en temps réel</li>
+          <li><strong>normalizers</strong> — Normalisation et transformation des événements météo </li>
+          <li><strong>docker/kafka-kraft</strong> — Cluster Kafka en mode KRaft (sans Zookeeper) conteneurisé</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role">Points techniques notables</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Utilisation de Kafka en mode <strong>KRaft</strong> — architecture moderne sans dépendance Zookeeper</li>
+          <li>Traitement et agrégation des features météo directement en streaming via <strong>ksqlDB</strong></li>
+          <li>Déploiement entièrement conteneurisé via <strong>Docker Compose</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL LabGuard -->
+<div id="modal-labguard" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding:2rem;">
+  <div style="background:var(--bg-secondary); border:1px solid var(--border); border-radius:16px; padding:2rem; max-width:700px; width:100%; max-height:80vh; overflow-y:auto; position:relative;">
+    <button onclick="document.getElementById('modal-labguard').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;">✕</button>
+    <div class="section-label">Détails</div>
+    <h3 class="featured-title" style="font-size:1.4rem;margin-bottom:1.5rem;">Lab Guard — Surveillance de Données Médicales</h3>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div class="exp-card">
+        <div class="exp-role"> Problématique</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Les laboratoires médicaux produisent des volumes importants de données biologiques difficiles à surveiller manuellement. Lab Guard automatise la validation, la détection d'anomalies et le reporting qualité.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Architecture globale</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Frontend — Interface web moderne et responsive</li>
+          <li>Backend — API REST gérant la logique métier et les validations</li>
+          <li>Données — Ingestion et traitement de fichiers CSV médicaux structurés</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Fonctionnalités clés</div>
+        <ul class="exp-missions" style="margin-top:0.5rem;">
+          <li>Upload et parsing de fichiers CSV médicaux</li>
+          <li>Création de cohortes avec filtres dynamiques multicritères</li>
+          <li>Définition de règles de validation métier personnalisées</li>
+          <li>Détection de drift statistique par cohorte et par période</li>
+          <li>Génération automatique de summaries pour le contrôle qualité</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role"> Valeur ajoutée</div>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.5rem;line-height:1.7;">Réduction du temps de contrôle qualité, détection automatique des dérives statistiques avant impact clinique, et génération de rapports exploitables.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FEATURED PROJECT -->
+<section id="featured" style="background:var(--bg-secondary)">
+  <div class="section-container">
+    <div class="section-label">03.1 Projet Vedette</div>
+    <div class="featured-project">
+      <div class="featured-badge">⭐ Projet de Fin d'Études — ENSAO</div>
+      <h2 class="featured-title">Lakehouse Cloud Native pour l'Analyse<br>du Marché de l'Emploi Tech</h2>
+      <p class="featured-desc">Plateforme open-source de data engineering collectant et analysant des offres d'emploi tech au Maroc et en France depuis des sources hétérogènes . Le pipeline ingère, déduplique, normalise et enrichit les données via LLM pour extraire les compétences réellement demandées sur le marché — exposées via dashboards et agents IA. Architecture Databricks-ready pour migration cloud.</p>
+
+      <div class="arch-diagram">
+        <div class="arch-title"> Architecture Medallion — Pipeline complet</div>
+        <div class="arch-flow">
+          <div class="arch-node">
+            <span class="arch-node-icon">🌐</span>
+            <span class="arch-node-name">Sources</span>
+          </div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node" style="border-color:rgba(255,107,157,0.4)">
+            <span class="arch-node-icon">🟤</span>
+            <span class="arch-node-name">Bronze / MinIO</span>
+          </div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node" style="border-color:rgba(192,192,192,0.5)">
+            <span class="arch-node-icon">⚙️</span>
+            <span class="arch-node-name">Silver / Spark</span>
+          </div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node" style="border-color:rgba(255,193,7,0.4)">
+            <span class="arch-node-icon">🏆</span>
+            <span class="arch-node-name">Gold / dbt</span>
+          </div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node" style="border-color:rgba(108,99,255,0.4)">
+            <span class="arch-node-icon">🤖</span>
+            <span class="arch-node-name">Agents IA</span>
+          </div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node" style="border-color:rgba(0,212,170,0.4)">
+            <span class="arch-node-icon">📊</span>
+            <span class="arch-node-name">Dashboards</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-results">
+        <div class="result-card">
+          <div class="result-val">4</div>
+          <div class="result-label">Sources intégrées</div>
+        </div>
+        <div class="result-card">
+          <div class="result-val">2</div>
+          <div class="result-label">Marchés analysés (MA & FR)</div>
+        </div>
+        <div class="result-card">
+          <div class="result-val">3</div>
+          <div class="result-label">Couches Medallion</div>
+        </div>
+        <div class="result-card">
+          <div class="result-val">☁️</div>
+          <div class="result-label">Databricks-ready</div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);margin-bottom:0.8rem;">Stack technique</div>
+        <div class="project-tech">
+          <span class="tech-tag">PySpark</span>
+          <span class="tech-tag">Apache Airflow</span>
+          <span class="tech-tag">MinIO</span>
+          <span class="tech-tag">Delta Lake</span>
+          <span class="tech-tag">dbt</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">BeautifulSoup</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+        <a href="https://github.com/nouhaylayousfi/Lakehouse_CloudNative_tech_jobs.git" class="btn-primary" target="_blank">🔗 Voir sur GitHub</a>
+        <a href="#" class="btn-secondary" onclick="document.getElementById('modal-lakehouse').style.display='flex'; return false;">📑 Détails complets</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-container">
+    <div class="section-label">04 Expérience</div>
+    <h2 class="section-title">Parcours<br>professionnel</h2>
+    <div class="exp-timeline" id="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-date-col">
+          <div class="exp-period">Mai 2026 – Sep 2026</div>
+          <div class="exp-org">Architeo</div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-role">Data Engineer Intern — PFE</div>
+          <ul class="exp-missions">
+            <li>Conception et développement d'une plateforme Lakehouse Cloud Native pour l'analyse du marché de l'emploi tech (Maroc & France).</li>
+            <li>Architecture Medallion (Bronze/Silver/Gold) avec PySpark, MinIO, dbt et orchestration Airflow.</li>
+            <li>Intégration de LLMs pour l'extraction automatique des compétences techniques depuis les offres d'emploi.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date-col">
+          <div class="exp-period">Juil 2025 – Sep 2025</div>
+          <div class="exp-org">SII Group Morocco, Oujda</div>
+        </div>
+        <div class="exp-card">
+          <div class="exp-role">Stagiaire en Intelligence Artificielle</div>
+          <ul class="exp-missions">
+            <li>Développement d'un outil IA combinant un LLM local (Claude) et le Model Context Protocol (MCP) pour l'analyse de dépôts GitHub.</li>
+            <li>Génération automatique d'analyses et recommandations pour l'amélioration de la qualité du code.</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--bg-secondary)">
+  <div class="section-container">
+    <div class="section-label">05 Certifications</div>
+    <h2 class="section-title">Formations<br>& accréditations</h2>
+    <div class="certs-grid" id="certs-grid">
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+          <i class="devicon-amazonwebservices-plain-wordmark" style="font-size:1.8rem;"></i>
+          <img src="images/dlai-logo.webp" style="height:24px;width:auto;object-fit:contain;"/>
+        </span>
+        <div class="cert-name">Data Engineering Specialization</div>
+        <div class="cert-org">AWS & DeepLearning.AI · 4 cours</div>
+        <div style="display:flex;flex-direction:column;gap:0.3rem;margin-top:0.8rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;">
+            <span style="color:var(--accent-teal);">✅</span>
+            <span style="color:var(--text-secondary);">Cours 1 — Introduction to Data Engineering</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;">
+            <span style="color:var(--accent-violet);animation:pulse 2s infinite;display:inline-block;">⏳</span>
+            <span style="color:var(--text-secondary);">Cours 2 — Source Systems, Data Ingestion & Pipelines</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;">
+            <span style="color:var(--text-muted);">○</span>
+            <span style="color:var(--text-muted);">Cours 3 — Data Storage & Queries</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;">
+            <span style="color:var(--text-muted);">○</span>
+            <span style="color:var(--text-muted);">Cours 4 — Data Modeling, Transformation, and Serving</span>
+            
+          </div>
+        </div>
+          <a href="https://coursera.org/share/8b87281413dd710640a8bae4cafbc333" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+
+
+      <div class="cert-card">
+        <span class="cert-badge"><i class="devicon-amazonwebservices-plain-wordmark"></i></span>
+        <div class="cert-name">Cloud Foundations </div>
+        <div class="cert-org">Amazon Web Services</div>
+        <a href="https://www.credly.com/badges/c3bc58e1-825d-4da2-9049-4a9c8bf5fa3d" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+          <img src="images/datacamp.png" style="height:24px;width:auto;object-fit:contain;"/>
+        </span>
+        <div class="cert-name">Understanding Microsoft Azure Architecture and Services</div>
+        <div class="cert-org">DataCamp</div>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/579751c7244ab0dd212c177cc5969de6427af24e?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+          <img src="images/datacamp.png" style="height:24px;width:auto;object-fit:contain;"/>
+        </span>
+        <div class="cert-name">Introduction to Azure</div>
+        <div class="cert-org">DataCamp</div>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/285e85ee4961ea0528ca10a1da49859a1aa37be5?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+          <img src="images/dlai-logo.webp" style="height:24px;width:auto;object-fit:contain;"/>
+        </span>
+        <div class="cert-name">Supervised Machine Learning: Regression and Classification </div>
+        <div class="cert-org">DeepLearning.AI</div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/OOM8CLT2FSZP" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+          <img src="images/redhat.svg" style="height:24px;width:auto;object-fit:contain;"/>
+        </span>
+        <div class="cert-name">Red Hat Training: Getting Started with Linux Fundamentals (RH104 - RHA) </div>
+        <div class="cert-org">Red Hat Academy </div>
+        <a href="https://www.credly.com/badges/e8c57659-494b-4bd0-9733-ad32047647dd" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+
+      <div class="cert-card">
+        <span class="cert-badge" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+      
+
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/365-data-science/default.svg" width="50" height="50" style="filter:invert(68%) sepia(60%) saturate(400%) hue-rotate(130deg) brightness(100%) contrast(90%);"/>
+        </span>
+        <div class="cert-name">Statistics </div>
+        <div class="cert-org">365.datascience</div>
+        <a href="https://learn.365datascience.com/certificates/CC-7D86D738A5/" target="_blank" class="btn-ghost primary-ghost" style="margin-top:0.8rem;font-size:0.75rem;padding:0.35rem 0.9rem;">
+            🔗 Voir le certificat
+          </a>
+      </div>
+    </div>
+  </div> 
+
+  
+</section>
+
+<!-- LANGUES -->
+<section id="langues">
+  <div class="section-container">
+    <div class="section-label">06 Langues</div>
+    <h2 class="section-title">Langues</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:1.2rem;">
+
+      <div class="exp-card" style="flex:1;min-width:180px;text-align:center;padding:1.8rem;">
+        <div style="font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin-bottom:0.4rem;">Arabe</div>
+        <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);">Langue maternelle</div>
+      </div>
+
+      <div class="exp-card" style="flex:1;min-width:180px;text-align:center;padding:1.8rem;">
+        <div style="font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin-bottom:0.4rem;">Français</div>
+        <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);">Avancé · DELF B2</div>
+      </div>
+
+      <div class="exp-card" style="flex:1;min-width:180px;text-align:center;padding:1.8rem;">
+        <div style="font-family:var(--font-display);font-weight:600;font-size:1.05rem;margin-bottom:0.4rem;">Anglais</div>
+        <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-teal);">Opérationnel</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ACTIVITÉS -->
+<section id="activites">
+  <div class="section-container">
+    <div class="section-label">07 Activités</div>
+    <h2 class="section-title">Au-delà du<br>technique</h2>
+    <p class="section-desc">Engagement associatif, pédagogie et partage des connaissances.</p>
+
+    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+
+      <div class="exp-card" style="display:flex;align-items:flex-start;gap:1.5rem;">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(108,99,255,0.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">🎤</div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:0.3rem;">Animatrice — DATATHONX (2ème édition)</div>
+          <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--accent-teal);margin-bottom:0.5rem;">ENSAO</div>
+          <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;">Animation et coordination de la compétition data à l'échelle de l'école. Prise de parole en public, gestion du déroulement des épreuves et communication avec les participants.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem;">
+            <span class="interest-tag">Prise de parole</span>
+            <span class="interest-tag">Communication</span>
+            <span class="interest-tag">Data</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card" style="display:flex;align-items:flex-start;gap:1.5rem;">
+        <div style="width:48px;height:48px;border-radius:12px;background:rgba(0,212,170,0.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">📚</div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:0.3rem;">Formatrice — Atelier Bases de Données & Réseaux de Neurones</div>
+          <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--accent-teal);margin-bottom:0.5rem;">ENSAO</div>
+          <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;">Conception et animation d'un atelier d'introduction aux bases de données et aux réseaux de neurones pour des étudiants. Vulgarisation de concepts techniques complexes avec une approche pédagogique accessible.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.8rem;">
+            <span class="interest-tag">Pédagogie</span>
+            <span class="interest-tag">Vulgarisation</span>
+            <span class="interest-tag">Deep Learning</span>
+            <span class="interest-tag">Bases de données</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-container">
+    <div class="section-label">08 Blog</div>
+    <h2 class="section-title">Articles<br>techniques</h2>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;text-align:center;gap:1rem;">
+      <div style="width:12px;height:12px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s infinite;"></div>
+      <div style="font-family:var(--font-mono);font-size:0.85rem;color:var(--accent-teal);letter-spacing:0.15em;">COMING SOON</div>
+      <p style="color:var(--text-muted);font-size:0.9rem;max-width:400px;line-height:1.7;">Je partagerai prochainement des articles techniques sur la data engineering, l'IA et le cloud. Restez connectés.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg-secondary)">
+  <div class="section-container">
+    <div class="section-label">09 Contact</div>
+    <h2 class="section-title">Travaillons<br>ensemble</h2>
+    <p class="section-desc">Disponible pour un premier emploi. N'hésitez pas à me contacter pour discuter de vos projets data.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:nouhayla.yousfi3@gmail.com" class="contact-link">
+          <div class="contact-link-icon" style="background:rgba(108,99,255,0.15)">  <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/gmail/default.svg" alt="Gmail" width="24" height="24"/>
+</div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">Email</div>
+            <div class="contact-link-value">nouhayla.yousfi3@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/nouhayla-yousfi-b02961280/" class="contact-link" target="_blank">
+          <div class="contact-link-icon" style="background:rgba(0,119,181,0.15)"><i class="devicon-linkedin-plain colored"></i></div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">LinkedIn</div>
+            <div class="contact-link-value">Nouhayla YOUSFI</div>
+          </div>
+        </a>
+        <a href="https://github.com/nouhaylayousfi" class="contact-link" target="_blank">
+          <div class="contact-link-icon" style="background:rgba(255,255,255,0.07)">
+            <i class="devicon-github-original"></i>
+          </div>
+          <div class="contact-link-info">
+            <div class="contact-link-label">GitHub</div>
+            <div class="contact-link-value">github.com/nouhaylayousfi</div>
+          </div>
+        </a>
+        
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nom complet *</label>
+            <input type="text" name="nom" class="form-input" placeholder="Jean Dupont" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" name="email" class="form-input" placeholder="jean@company.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sujet</label>
+          <select name="sujet" class="form-select">
+            <option value="">Sélectionner...</option>
+            <option>Offre d'emploi</option>
+            <option>Collaboration projet</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message *</label>
+          <textarea name="message" class="form-textarea" placeholder="Ecrivez votre message ici" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center">🚀 Envoyer le message</button>
+        <div class="form-success" id="form-success">✅ Message envoyé avec succès ! Je vous répondrai sous 24h.</div>
+      </form>
+
+      <script>
+      document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type=submit]');
+        btn.textContent = '⏳ Envoi en cours...';
+        btn.disabled = true;
+        const data = new FormData(this);
+        try {
+          const res = await fetch('https://formspree.io/f/mqerdyry', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            document.getElementById('form-success').style.display = 'block';
+            btn.style.display = 'none';
+            this.reset();
+          } else {
+            btn.textContent = '❌ Erreur — réessayez';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = '❌ Erreur — réessayez';
+          btn.disabled = false;
+        }
+      });
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+<div class="nav-logo">
+  <img src="images/logolk.png" height="40" width="40" style="border-radius:50%;object-fit:cover;"/>
+</div>
+        <p class="footer-desc">Data Engineer passionnée par la transformation des données en solutions intelligentes. </p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nouhayla-yousfi-b02961280/" class="social-link" target="_blank">
+            <i class="devicon-linkedin-plain colored"></i>
+          </a>
+          <a href="https://github.com/nouhaylayousfi" class="social-link" target="_blank">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="mailto:nouhayla.yousfi3@gmail.com" class="social-link">
+  <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/gmail/default.svg" alt="Gmail" width="24" height="24"/>
+</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#experience">Expérience</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#activites">Activités</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Télécharger CV</a></li>
+          <li><a href="#blog">Blog Technique</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nouhayla YOUSFI. Tous droits réservés.</span>
+      <div class="footer-made">Construit avec 💜 & mes données</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// SCROLL PROGRESS
+const scrollBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+  scrollBar.style.width = pct + '%';
+});
+
+// NAV SCROLL
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// HAMBURGER
+const ham = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+ham.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// THEME TOGGLE
+const themeBtn = document.getElementById('theme-toggle');
+let isDark = true;
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeBtn.textContent = isDark ? '🌙' : '☀️';
+});
+
+// PARTICLES
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+function initParticles() {
+  particles = [];
+  const count = Math.min(Math.floor(W * H / 12000), 80);
+  for (let i = 0; i < count; i++) {
+    particles.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4, r: Math.random() * 2 + 1 });
+  }
+}
+initParticles();
+let mouseX = W/2, mouseY = H/2;
+window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+function animParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach((p, i) => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W) p.vx *= -1;
+    if (p.y < 0 || p.y > H) p.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(108,99,255,0.35)';
+    ctx.fill();
+    const dx = mouseX - p.x, dy = mouseY - p.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 120) {
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.lineTo(mouseX, mouseY);
+      ctx.strokeStyle = `rgba(108,99,255,${0.15 * (1 - dist/120)})`;
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+    for (let j = i+1; j < particles.length; j++) {
+      const q = particles[j];
+      const d = Math.hypot(p.x - q.x, p.y - q.y);
+      if (d < 100) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = `rgba(0,212,170,${0.12 * (1 - d/100)})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
+  });
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// INTERSECTION OBSERVER
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // Skill bars
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        const w = bar.getAttribute('data-width');
+        setTimeout(() => bar.style.width = w + '%', 100);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.timeline-item,.skill-category,.project-card,.exp-item,.cert-card').forEach(el => io.observe(el));
+
+
+
+// PROJECTS FILTER
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    document.querySelectorAll('.project-card').forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const show = filter === 'all' || cat === filter;
+      card.style.display = show ? 'block' : 'none';
+    });
+  });
+});
+
+
+
+// CONTACT FORM
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.textContent = '⏳ Envoi en cours...';
+  btn.disabled = true;
+  setTimeout(() => {
+    document.getElementById('form-success').style.display = 'block';
+    btn.style.display = 'none';
+    e.target.reset();
+  }, 1500);
+}
+
+// CV DOWNLOAD
+function downloadCV() {
+  alert('Veuillez remplacer ce fichier avec votre vrai CV PDF !\n\nDans le code, remplacez la fonction downloadCV() par un lien vers votre fichier CV.');
+}
+
+// SMOOTH SCROLL NAV
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// Trigger skill bars on page load if already visible
+window.addEventListener('load', () => {
+  document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+    const rect = bar.closest('.skill-category')?.getBoundingClientRect();
+    if (rect && rect.top < window.innerHeight) {
+      const w = bar.getAttribute('data-width');
+      setTimeout(() => bar.style.width = w + '%', 300);
+    }
+  });
+});
+</script>
+</body>
+</html>
